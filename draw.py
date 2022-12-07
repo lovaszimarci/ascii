@@ -11,7 +11,7 @@ print(img.getpixel((219,167)), img.size, img.mode)
 
 
 def break_line():
-    with open("venus_face.txt") as f:
+    with open("venus_face.txt", "a") as f:
         f.write("\n")
 
 
@@ -46,5 +46,23 @@ def evaluate(value_of_pixel):
         write_to_file("@")
 
 
-def loop():
+def go_to_first_line():
     pass
+
+
+def loop():
+    
+    for vertical in range(167):
+        break_line()
+        for horizontal in range(219):
+            evaluate(img.getpixel((horizontal, vertical)))
+            write_to_file(" ")
+
+
+
+def main():
+    
+
+    loop()
+
+main()
