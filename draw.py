@@ -10,12 +10,41 @@ img = img.convert("L")
 print(img.getpixel((219,167)), img.size, img.mode)
 
 
+def break_line():
+    with open("venus_face.txt") as f:
+        f.write("\n")
+
+
 def write_to_file(character):
-    pass
+    
+    with open("venus_face.txt","a") as f:
+        f.write(character)
+        f.close()
 
 
 
 def evaluate(value_of_pixel):
+    if value_of_pixel <= 25.5:
+        write_to_file(" ")
+    elif value_of_pixel > 25.5 and value_of_pixel <= 51:
+        write_to_file(".")
+    elif value_of_pixel > 51 and value_of_pixel <= 76.5:
+        write_to_file(":")
+    elif value_of_pixel > 76.5 and value_of_pixel <= 102:
+        write_to_file("-")
+    elif value_of_pixel > 102 and value_of_pixel <= 127.5:
+        write_to_file("=")
+    elif value_of_pixel > 127.5 and value_of_pixel <= 153:
+        write_to_file("+")
+    elif value_of_pixel > 153 and value_of_pixel <= 178.5:
+        write_to_file("*")
+    elif value_of_pixel > 178.5 and value_of_pixel <= 204:
+        write_to_file("#")
+    elif value_of_pixel > 204 and value_of_pixel <= 229.5:
+        write_to_file("%")
+    elif value_of_pixel > 229.5 and value_of_pixel <= 255:
+        write_to_file("@")
+
+
+def loop():
     pass
-
-
